@@ -60,4 +60,11 @@
 }
 .sign-in-content .sign-in-button:hover {
   background-color: #00a766;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }/*# sourceMappingURL=Login.css.map */
