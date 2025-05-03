@@ -1,0 +1,20 @@
+.notfound {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+.notfound h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.notfound p {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+}
+.notfound a {
+  color: #00f0ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.notfound a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=Notfound.css.map */

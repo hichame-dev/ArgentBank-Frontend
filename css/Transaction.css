@@ -1,0 +1,56 @@
+.transactions {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+.transactions .account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.transactions .account .account-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.transactions .account .account-content-wrapper.cta {
+  justify-content: center;
+}
+.transactions .account .account-content-wrapper .account-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.transactions .account .account-content-wrapper .account-amount {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.transactions .account .account-content-wrapper .account-amount-description {
+  font-size: 1.4rem;
+  color: gray;
+}
+.transactions .account .account-content-wrapper .transaction-button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  background-color: #00bc77;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.transactions .account .account-content-wrapper .transaction-button:hover {
+  background-color: #00995f;
+}
+.transactions .sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}/*# sourceMappingURL=Transaction.css.map */

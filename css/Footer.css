@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #ccc;
+  padding: 2rem 0 1.5rem;
+  background-color: #fff;
+}
+.footer .footer-text {
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}/*# sourceMappingURL=Footer.css.map */
