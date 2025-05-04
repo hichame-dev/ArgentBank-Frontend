@@ -32,6 +32,12 @@ const Profile = () => {
         fetchProfile()
     }, [token, dispatch, navigate])
 
+    const handleViewTransactions = (account) => {
+        navigate('/transactions', {
+            state: { account }
+        })
+    }
+
     return (
         <main className="main bg-dark">
             <div className="profile-container">
@@ -56,7 +62,27 @@ const Profile = () => {
                             <p className="profile-account-amount">$2,082.79</p>
                             <p className="profile-account-desc">Available Balance</p>
                         </div>
-                        <button className="profile-btn">View transactions</button>
+                        <button
+                            className="profile-btn"
+                            onClick={() =>
+                                handleViewTransactions({
+                                    title: 'Argent Bank Checking (x8349)',
+                                    transactions: [
+                                        {
+                                            date: '27/02/20',
+                                            description: 'Golden Sun Bakery',
+                                            amount: '$8.00',
+                                            balance: '$298.00',
+                                            type: 'Electronic',
+                                            category: 'Food',
+                                            note: 'Lorem ipsum',
+                                        },
+                                    ]
+                                })
+                            }
+                        >
+                            View transactions
+                        </button>
                     </div>
 
                     <div className="profile-account">
@@ -65,7 +91,17 @@ const Profile = () => {
                             <p className="profile-account-amount">$10,928.42</p>
                             <p className="profile-account-desc">Available Balance</p>
                         </div>
-                        <button className="profile-btn">View transactions</button>
+                        <button
+                            className="profile-btn"
+                            onClick={() =>
+                                handleViewTransactions({
+                                    title: 'Argent Bank Savings (x6712)',
+                                    transactions: [] // à remplir plus tard
+                                })
+                            }
+                        >
+                            View transactions
+                        </button>
                     </div>
 
                     <div className="profile-account">
@@ -74,7 +110,17 @@ const Profile = () => {
                             <p className="profile-account-amount">$184.30</p>
                             <p className="profile-account-desc">Current Balance</p>
                         </div>
-                        <button className="profile-btn">View transactions</button>
+                        <button
+                            className="profile-btn"
+                            onClick={() =>
+                                handleViewTransactions({
+                                    title: 'Argent Bank Credit Card (x8349)',
+                                    transactions: [] // à remplir plus tard
+                                })
+                            }
+                        >
+                            View transactions
+                        </button>
                     </div>
                 </div>
             </div>

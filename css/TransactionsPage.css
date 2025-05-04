@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.transactions-page {
+  background-color: white;
+  min-height: 100vh;
+  padding: 2rem;
+  color: white;
+}
+
+/* ==========================
+   Account banner (haut de page)
+========================== */
+.account-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.account-summary h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.account-balance {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.balance-label {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.close-btn {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ==========================
+   En-tête des transactions
+========================== */
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: white;
+  color: #2c3e50;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid #00bc77;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 1rem;
+}
+.transactions-header span {
+  flex: 1;
+  text-align: left;
+}
+.transactions-header span:nth-child(3),
+.transactions-header span:nth-child(4) {
+  text-align: right;
+}/*# sourceMappingURL=TransactionsPage.css.map */

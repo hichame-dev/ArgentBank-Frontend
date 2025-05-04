@@ -1,0 +1,42 @@
+.transaction-item {
+  background-color: #00bc77;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+.transaction-item .transaction-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+.transaction-item .transaction-main span {
+  flex: 1;
+  text-align: left;
+  font-weight: 500;
+}
+.transaction-item .transaction-main .arrow {
+  flex: 0 0 40px;
+  text-align: right;
+}
+.transaction-item .transaction-main .arrow i {
+  font-size: 1rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+.transaction-item .transaction-details {
+  background-color: #48c798;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.transaction-item .transaction-details .detail-label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  align-self: start;
+}/*# sourceMappingURL=TransactionItem.css.map */
