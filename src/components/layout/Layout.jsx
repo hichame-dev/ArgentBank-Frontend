@@ -5,12 +5,18 @@ import Footer from './Footer/Footer'
 
 const Layout = () => {
     const location = useLocation()
-    const isPrivatePage = location.pathname.startsWith('/profile') || location.pathname.startsWith('/transactions')
+    const isPrivatePage =
+        location.pathname.startsWith('/profile') ||
+        location.pathname.startsWith('/transactions')
 
     return (
         <>
             {isPrivatePage ? <ProfileHeader /> : <MainHeader />}
-            <Outlet />
+
+            <main className="main">
+                <Outlet />
+            </main>
+
             <Footer />
         </>
     )

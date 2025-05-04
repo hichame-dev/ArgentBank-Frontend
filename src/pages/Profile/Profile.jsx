@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setUser } from '../../redux/slices/authSlice'
 import './Profile.scss'
-import Transactions from '../Transaction/Transaction'
 
 const Profile = () => {
     const token = useSelector((state) => state.auth.token)
@@ -35,19 +34,50 @@ const Profile = () => {
 
     return (
         <main className="main bg-dark">
-            <div className="header">
-                <h1>
-                    Welcome back
-                    <br />
-                    {user?.firstName || "Guest !"} {/* Affiche "Tony" ou "Guest" si non défini */}
-                </h1>
-                <button className="edit-button" onClick={() => navigate('/edit-name')}>
-                    Edit Name
-                </button>
-            </div>
+            <div className="profile-container">
+                <div className="profile-header">
+                    <h1>
+                        Welcome back
+                        <br />
+                        {user?.firstName || "Guest !"}
+                    </h1>
+                    <button
+                        className="profile-edit-button"
+                        onClick={() => navigate('/edit-name')}
+                    >
+                        Edit Name
+                    </button>
+                </div>
 
-            {/* Affichage des transactions sous l'en-tête */}
-            <Transactions />
+                <div className="profile-accounts">
+                    <div className="profile-account">
+                        <div>
+                            <p className="profile-account-title">Argent Bank Checking (x8349)</p>
+                            <p className="profile-account-amount">$2,082.79</p>
+                            <p className="profile-account-desc">Available Balance</p>
+                        </div>
+                        <button className="profile-btn">View transactions</button>
+                    </div>
+
+                    <div className="profile-account">
+                        <div>
+                            <p className="profile-account-title">Argent Bank Savings (x6712)</p>
+                            <p className="profile-account-amount">$10,928.42</p>
+                            <p className="profile-account-desc">Available Balance</p>
+                        </div>
+                        <button className="profile-btn">View transactions</button>
+                    </div>
+
+                    <div className="profile-account">
+                        <div>
+                            <p className="profile-account-title">Argent Bank Credit Card (x8349)</p>
+                            <p className="profile-account-amount">$184.30</p>
+                            <p className="profile-account-desc">Current Balance</p>
+                        </div>
+                        <button className="profile-btn">View transactions</button>
+                    </div>
+                </div>
+            </div>
         </main>
     )
 }
