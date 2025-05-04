@@ -1,5 +1,7 @@
 import React from 'react'
+import Layout from '../../components/layout/Layout';
 import './Home.scss'
+ // Ou le chemin approprié
 
 import chatIcon from '../../assets/img/icon-chat.png'
 import moneyIcon from '../../assets/img/icon-money.png'

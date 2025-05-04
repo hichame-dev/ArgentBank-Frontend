@@ -1,17 +1,16 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './Header/Header'
+import { Outlet, useLocation } from 'react-router-dom'
+import MainHeader from './Header/MainHeader'
+import ProfileHeader from './ProfileHeader/ProfileHeader'
 import Footer from './Footer/Footer'
 
 const Layout = () => {
-    console.log('[Layout.jsx] Page layout loaded')
+    const location = useLocation()
+    const isPrivatePage = location.pathname.startsWith('/profile') || location.pathname.startsWith('/transactions')
 
     return (
         <>
-            <Header />
-            <main>
-                <Outlet />
-            </main>
+            {isPrivatePage ? <ProfileHeader /> : <MainHeader />}
+            <Outlet />
             <Footer />
         </>
     )

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../../redux/slices/authSlice'
 import { useNavigate, Link } from 'react-router-dom'
 import logo from '../../../assets/img/argentBankLogo.png'
-import './Header.scss'
+import './MainHeader.scss'
 
 const Header = () => {
     const user = useSelector((state) => state.auth.user)

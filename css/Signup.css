@@ -1,0 +1,48 @@
+.sign-in-content {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.sign-in-icon {
+  font-size: 4rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.sign-in-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #00bc77;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.sign-in-button:hover {
+  background-color: #009a63;
+}/*# sourceMappingURL=Signup.css.map */

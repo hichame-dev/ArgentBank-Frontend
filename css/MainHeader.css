@@ -1,0 +1,33 @@
+.header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.header-logo-img {
+  max-width: 200px;
+  height: auto;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-nav a,
+.header-nav .icon {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.header-nav a:hover,
+.header-nav .icon:hover {
+  text-decoration: underline;
+}
+.header-nav .logout {
+  color: #ff6868;
+}/*# sourceMappingURL=MainHeader.css.map */

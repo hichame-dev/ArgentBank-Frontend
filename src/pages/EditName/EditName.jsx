@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setUser } from '../../redux/slices/authSlice'
 import { useNavigate } from 'react-router-dom'
-
-
-
+import { setUser } from '../../redux/slices/authSlice'
+import './EditName.scss'
 
 const EditName = () => {
     const token = useSelector((state) => state.auth.token)
@@ -12,8 +10,8 @@ const EditName = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const [editMode, setEditMode] = useState(false)
     const [username, setUsername] = useState('')
+    const [originalUsername, setOriginalUsername] = useState('')
 
     useEffect(() => {
         if (!token) {
@@ -32,11 +30,10 @@ const EditName = () => {
                 })
 
                 const data = await res.json()
-                console.log('[EditName.jsx] Profile fetched:', data)
-
                 if (res.ok && data.body) {
                     dispatch(setUser(data.body))
                     setUsername(data.body.userName)
+                    setOriginalUsername(data.body.userName)
                 } else {
                     console.error('[EditName.jsx] Failed to fetch profile')
                 }
@@ -47,9 +44,6 @@ const EditName = () => {
 
         fetchProfile()
     }, [token, dispatch, navigate])
-
-    const handleEdit = () => setEditMode(true)
-    const handleCancel = () => setEditMode(false)
 
     const handleSave = async () => {
         try {
@@ -63,11 +57,9 @@ const EditName = () => {
             })
 
             const data = await res.json()
-            console.log('[EditName.jsx] Save response:', data)
-
             if (res.ok) {
                 dispatch(setUser({ ...user, userName: username }))
-                setEditMode(false)
+                setOriginalUsername(username)
             } else {
                 console.error('[EditName.jsx] Error updating username:', data.message)
             }
@@ -76,32 +68,43 @@ const EditName = () => {
         }
     }
 
-    return (
-        <section className="edit-profile">
-            <div className="header">
-                <h1>
-                    Welcome back
-                    <br />
-                    {user?.firstName} {user?.lastName}!
-                </h1>
+    const handleCancel = () => {
+        setUsername(originalUsername)
+    }
 
-                {editMode ? (
-                    <div className="edit-form">
+    return (
+        <main className="main bg-dark">
+            <section className="edit-profile white-box">
+                <h2>Edit user info</h2>
+                <form className="edit-form" onSubmit={(e) => e.preventDefault()}>
+                    <div className="input-wrapper">
+                        <label htmlFor="username">User name:</label>
                         <input
+                            id="username"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                        <div className="buttons">
-                            <button onClick={handleSave}>Save</button>
-                            <button onClick={handleCancel}>Cancel</button>
-                        </div>
                     </div>
-                ) : (
-                    <button onClick={handleEdit}>Edit Name</button>
-                )}
-            </div>
-        </section>
+                    <div className="input-wrapper">
+                        <label htmlFor="firstName">First name:</label>
+                        <input type="text" id="firstName" value={user?.firstName || ''} disabled />
+                    </div>
+                    <div className="input-wrapper">
+                        <label htmlFor="lastName">Last name:</label>
+                        <input type="text" id="lastName" value={user?.lastName || ''} disabled />
+                    </div>
+                    <div className="button-group">
+                        <button type="button" className="btn save" onClick={handleSave}>
+                            Save
+                        </button>
+                        <button type="button" className="btn cancel" onClick={handleCancel}>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </main>
     )
 }
 
