@@ -1,9 +1,9 @@
 @charset "UTF-8";
 .transactions-page {
-  background-color: white;
+  background-color: #fff;
   min-height: 100vh;
   padding: 2rem;
-  color: white;
+  color: #fff;
 }
 
 /* ==========================
@@ -15,7 +15,7 @@
   align-items: center;
   background-color: #333;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 4px;
   margin-bottom: 2rem;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .account-balance {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin: 0.5rem 0;
 }
@@ -36,8 +36,8 @@
 }
 
 .close-btn {
-  font-size: 2rem;
-  color: white;
+  font-size: 2.5rem;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  background-color: white;
+  background-color: #fff;
   color: #2c3e50;
   padding: 1rem 2rem;
   border-bottom: 4px solid #00bc77;

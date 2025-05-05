@@ -1,15 +1,17 @@
+@use '../../../Styles/variables' as variables;
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid #ccc;
-    padding: 2rem 0 1.5rem;
-    background-color: #fff; // ou transparent si tu préfères
+    border-top: variables.$size-sm solid variables.$color-border-light;
+    padding: variables.$space-2xl 0 variables.$space-xxl;
+    background-color: variables.$color-white;
 
     .footer-text {
         margin: 0;
         padding: 0;
-        color: #2c3e50;
-        font-size: 1rem;
+        color: variables.$color-blue-dark;
+        font-size: variables.$space-base;
     }
 }

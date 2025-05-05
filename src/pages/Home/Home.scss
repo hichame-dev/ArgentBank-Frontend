@@ -1,23 +1,25 @@
+ @use '../../Styles/variables' as variables;
+
 .home {
     .hero {
         background-position: 0 -50px;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 300px;
+        height: variables.$size-10xl; // 300px
         position: relative;
 
         .hero-content {
             position: relative;
-            top: 2rem;
-            width: 200px;
-            background: white;
-            padding: 2rem;
+            top: variables.$space-2xl;
+            width: variables.$size-9xl; // 200px
+            background: variables.$color-white;
+            padding: variables.$space-2xl;
             text-align: left;
             margin: 0 auto;
 
             .subtitle {
                 font-weight: bold;
-                font-size: 1rem;
+                font-size: variables.$space-base;
                 margin: 0;
             }
 
@@ -27,19 +29,19 @@
             }
         }
 
-        @media (min-width: 920px) {
-            height: 400px;
-            background-position: 0% 33%;
+        @media (min-width: variables.$size-max-w-lg) {
+            height: variables.$size-11xl; // 400px
+            background-position: 0% variables.$percent-33;
 
             .hero-content {
                 position: absolute;
-                top: 50px;
-                right: 50px;
-                width: 300px;
-                margin: 2rem;
+                top: variables.$size-xl; // 50px
+                right: variables.$size-xl; // 50px
+                width: variables.$size-10xl; // 300px
+                margin: variables.$space-2xl;
 
                 .subtitle {
-                    font-size: 1.5rem;
+                    font-size: variables.$space-xxl; // 1.5rem
                 }
 
                 .text {
@@ -53,27 +55,27 @@
         display: flex;
         flex-direction: column;
 
-        @media (min-width: 920px) {
+        @media (min-width: variables.$size-max-w-lg) {
             flex-direction: row;
         }
 
         .feature-item {
             flex: 1;
-            padding: 2.5rem;
+            padding: variables.$space-3xl; // 2.5rem
             text-align: center;
 
             .feature-icon {
                 width: 100px;
-                border: 10px solid #00bc77;
+                border: variables.$size-xl solid variables.$color-green; // 10px
                 border-radius: 50%;
-                padding: 1rem;
+                padding: variables.$space-base;
             }
 
             .feature-title {
-                color: #222;
-                font-size: 1.25rem;
+                color: variables.$color-gray-dark;
+                font-size: variables.$space-lg; // 1.25rem
                 font-weight: bold;
-                margin-bottom: 0.5rem;
+                margin-bottom: variables.$space-s; // 0.5rem
             }
         }
     }

@@ -1,43 +1,45 @@
+@use '../../../Styles/variables' as variables;
+
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: variables.$color-white;
+    padding: variables.$space-base variables.$space-2xl;
+    border-bottom: variables.$size-xs solid variables.$color-bg-light;
 }
 
 .main-nav-logo img {
-    max-height: 40px;
+    max-height: variables.$size-3xl; // 40px
 }
 
 .main-nav-items {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: variables.$space-xxl;
 
     .main-nav-user {
         font-weight: 600;
-        color: #00bc77;
-        font-size: 1rem;
+        color: variables.$color-green;
+        font-size: variables.$space-base;
 
         i {
-            margin-right: 0.5rem;
+            margin-right: variables.$space-s;
         }
     }
 
     .icon {
-        font-size: 1.3rem;
-        color: #00bc77;
+        font-size: variables.$space-xl;
+        color: variables.$color-green;
         cursor: pointer;
         transition: color 0.2s ease;
 
         &:hover {
-            color: #00965d;
+            color: variables.$color-dark-green;
         }
     }
 
     .logout:hover {
-        color: #e44646;
+        color: variables.$color-error;
     }
 }

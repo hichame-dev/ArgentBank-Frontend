@@ -1,3 +1,5 @@
+@use '../../Styles/variables' as variables;
+
 /* ==========================
    Transactions Styles
 ========================== */
@@ -6,9 +8,8 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 80%;
-    /* Largeur ajustée pour les transactions */
-    padding: 2rem 0;
+    width: variables.$percent-80;
+    padding: variables.$space-2xl 0;
     box-sizing: border-box;
 }
 
@@ -16,72 +17,65 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Alignement du texte à gauche */
-    background-color: #fff;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: variables.$color-white;
+    padding: variables.$space-xxl;
+    margin-bottom: variables.$space-base;
+    border-radius: variables.$size-m; // 5px
+    box-shadow: 0 variables.$size-sm variables.$size-m rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: left;
 }
 
 .account-title {
-    font-size: 1.25rem;
+    font-size: variables.$space-lg;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 0.5rem;
+    color: variables.$color-gray-medium;
+    margin-bottom: variables.$space-s;
 }
 
 .account-amount {
-    font-size: 2rem;
+    font-size: variables.$space-2xl;
     font-weight: bold;
-    color: #00bc77;
-    /* Vert */
-    margin-bottom: 0.25rem;
+    color: variables.$color-green;
+    margin-bottom: variables.$space-xs;
 }
 
 .account-amount-description {
-    font-size: 1rem;
-    color: #555;
+    font-size: variables.$space-base;
+    color: variables.$color-gray-light;
 }
 
 .transaction-button {
-    padding: 10px 20px;
-    background-color: #00bc77;
-    /* Vert */
-    color: #fff;
-    font-size: 1rem;
+    padding: variables.$size-l variables.$size-xl;
+    background-color: variables.$color-green;
+    color: variables.$color-white;
+    font-size: variables.$space-base;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: variables.$size-m;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 1rem;
+    margin-top: variables.$space-base;
     align-self: flex-end;
 
-    /* Aligne le bouton à droite */
     &:hover {
-        background-color: darken(#00bc77, 10%);
+        background-color: variables.$color-dark-green; // Remplacé le darken() pour éviter les erreurs
     }
 }
 
 /* ==========================
    Responsiveness Styles
 ========================== */
-@media (min-width: 720px) {
+@media (min-width: variables.$size-11xl) {
     .transactions {
-        width: 60%;
-        /* Réduit la largeur des transactions */
+        width: variables.$percent-60;
     }
 
     .account {
         width: 100%;
-        /* Chaque compte prend toute la largeur */
     }
 
     .transaction-button {
-        width: 200px;
-        /* Largeur fixe du bouton */
+        width: variables.$size-8xl; // 200px
     }
 }

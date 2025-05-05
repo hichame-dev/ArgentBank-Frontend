@@ -1,5 +1,6 @@
+ @use '../../Styles/variables' as variables;
 .bg-dark {
-    background-color: #12002b;
+    background-color: variables.$color-purple-dark;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -7,74 +8,72 @@
 }
 
 .sign-in-content {
-    margin-top: 30px;
-    background-color: #fff;
-    width: 300px;
-    padding: 2rem;
+    margin-top: variables.$size-7xl; // 60px
+    background-color: variables.$color-white;
+    width: variables.$size-10xl; // 300px
+    padding: variables.$space-2xl;
     text-align: left;
-    margin-top: 60px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 variables.$size-sm variables.$size-md rgba(0, 0, 0, 0.2);
 
     h1 {
         text-align: center;
-        margin-bottom: 1rem;
-        color: #2c3e50;
+        margin-bottom: variables.$space-base;
+        color: variables.$color-blue-dark;
     }
 
     .sign-in-icon {
         display: block;
         margin: 0 auto;
-        font-size: 5rem;
-        color: #2c3e50;
-
+        font-size: variables.$space-huge; // 5rem
+        color: variables.$color-blue-dark;
     }
 
     .input-wrapper {
         display: flex;
         flex-direction: column;
-        margin-bottom: 1rem;
+        margin-bottom: variables.$space-base;
 
         label {
             font-weight: bold;
-            margin-bottom: 0.25rem;
+            margin-bottom: variables.$space-xs;
         }
 
         input {
-            padding: 0.5rem;
-            font-size: 1rem;
+            padding: variables.$space-s;
+            font-size: variables.$space-base;
         }
     }
 
     .input-remember {
         display: flex;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: variables.$space-base;
 
         label {
-            margin-left: 0.5rem;
+            margin-left: variables.$space-s;
         }
     }
 
     .sign-in-button {
         width: 100%;
-        padding: 0.5rem;
-        background-color: #00bc77;
-        color: white;
+        padding: variables.$space-s;
+        background-color: variables.$color-green;
+        color: variables.$color-white;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: variables.$space-base;
         border: none;
         cursor: pointer;
         text-align: center;
 
         &:hover {
-            background-color: #00a766;
+            background-color: variables.$color-medium-green;
         }
     }
 }
 
 .error-message {
-    color: red;
+    color: variables.$color-error-text; // définit comme red si pas encore existant
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    margin-bottom: variables.$space-base;
     text-align: center;
 }

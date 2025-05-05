@@ -1,26 +1,28 @@
+@use '../../../Styles/variables' as variables;
+
 .header {
-    background-color: #fff;
-    padding: 1rem 2rem;
+    background-color: variables.$color-white;
+    padding: variables.$space-base variables.$space-2xl;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: variables.$color-white; // corrigé ici
     text-align: right;
 }
 
 .header-logo-img {
-    max-width: 200px;
+    max-width: variables.$size-8xl;
     height: auto;
 }
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: variables.$space-base;
 
     a,
     .icon {
-        color: #2c3e50;
+        color: variables.$color-blue-dark;
         text-decoration: none;
         font-weight: bold;
         cursor: pointer;
@@ -31,6 +33,6 @@
     }
 
     .logout {
-        color: #ff6868;
+        color: variables.$color-alert;
     }
 }

@@ -1,8 +1,10 @@
+ @use '../../Styles/variables' as variables;
+
 .transactions-page {
-    background-color: white;
+    background-color: variables.$color-white;
     min-height: 100vh;
-    padding: 2rem;
-    color: white;
+    padding: variables.$space-2xl;
+    color: variables.$color-white;
 }
 
 /* ==========================
@@ -12,31 +14,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
+    background-color: variables.$color-gray-medium;
+    padding: variables.$space-2xl;
+    border-radius: variables.$size-s; // 8px (proche)
+    margin-bottom: variables.$space-2xl;
 }
 
 .account-summary h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: variables.$space-xxl; // 1.5rem
 }
 
 .account-balance {
-    font-size: 2rem;
+    font-size: variables.$space-3xl; // 2rem
     font-weight: bold;
-    margin: 0.5rem 0;
+    margin: variables.$space-s 0;
 }
 
 .balance-label {
-    font-size: 0.9rem;
-    color: #ccc;
+    font-size: 0.9rem; // variable personnalisée à ajouter si souhaité
+    color: variables.$color-border-light;
 }
 
 .close-btn {
-    font-size: 2rem;
-    color: white;
+    font-size: variables.$space-3xl; // 2rem
+    color: variables.$color-white;
     cursor: pointer;
 }
 
@@ -47,12 +49,12 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    background-color: white;
-    color: #2c3e50;
-    padding: 1rem 2rem;
-    border-bottom: 4px solid #00bc77;
-    border-radius: 4px 4px 0 0;
-    margin-bottom: 1rem;
+    background-color: variables.$color-white;
+    color: variables.$color-blue-dark;
+    padding: variables.$space-base variables.$space-2xl;
+    border-bottom: variables.$size-s solid variables.$color-green; // 4px solid
+    border-radius: variables.$size-s variables.$size-s 0 0;
+    margin-bottom: variables.$space-base;
 
     span {
         flex: 1;
