@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Layout from './components/layout/Layout'
 import Home from './pages/Home/Home'
-import Login from './pages/Login/Login'
-import EditName from './pages/EditName/EditName'
+import Login from './Pages/Login/Login'
 import Profile from './pages/Profile/Profile'
 import NotFound from './pages/NotFound/NotFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
@@ -21,7 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
           <Route path="/transactions" element={<PrivateRoute><TransactionsPage /></PrivateRoute>} />
-          <Route path="/edit-name" element={<PrivateRoute><EditName /></PrivateRoute>} />
+          
         </Route>
 
         <Route path="*" element={<NotFound />} />

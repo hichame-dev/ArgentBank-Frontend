@@ -1,7 +1,7 @@
- @use '../../Styles/variables' as variables;
+@use '../../Styles/variables' as variables;
 
 .profile-container {
-    background-color: variables.$color-purple-dark;
+    background-color: variables.$color-white;
     padding: 0;
     min-height: 100vh;
     display: flex;
@@ -19,7 +19,7 @@
 }
 
 .profile-header h1 {
-    font-size: variables.$space-3xl; // 2rem
+    font-size: variables.$space-3xl;
     margin: 0;
     padding: 0;
 }
@@ -29,19 +29,64 @@
     background-color: variables.$color-green;
     color: variables.$color-white;
     font-weight: bold;
-    padding: variables.$size-l; // 10px
+    padding: variables.$size-l;
     margin-top: variables.$space-base;
-    width: variables.$size-7xl; // 120px
+    width: variables.$size-7xl;
     text-align: center;
     cursor: pointer;
     border: none;
-    border-radius: variables.$size-m; // 5px
+    border-radius: variables.$size-m;
+}
+
+/* ✅ Bloc formulaire en colonne */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: variables.$space-base;
+    margin-top: variables.$space-base;
+    padding: variables.$space-base;
+}
+
+/* Champ input */
+.edit-form input {
+    padding: variables.$size-l;
+    font-size: variables.$space-base;
+    border: 1px solid variables.$color-gray-light;
+    border-radius: variables.$size-m;
+    width: 300px;
+    max-width: 80%;
+}
+
+/* Boutons Save et Cancel */
+.edit-form button {
+    padding: variables.$size-l variables.$size-xl;
+    font-size: variables.$space-base;
+    font-weight: bold;
+    border: none;
+    border-radius: variables.$size-m;
+    cursor: pointer;
+    width: 180px;
+    max-width: 90%;
+    transition: background-color 0.2s ease;
+}
+
+/* Bouton Save */
+.edit-form button:first-of-type {
+    background-color: variables.$color-green;
+    color: variables.$color-white;
+}
+
+/* Bouton Cancel */
+.edit-form button:last-of-type {
+    background-color: variables.$color-gray-medium;
+    color: variables.$color-white;
 }
 
 .profile-accounts {
     display: flex;
     flex-direction: column;
-    gap: variables.$size-6xl; // 30px
+    gap: variables.$size-6xl;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -51,10 +96,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: variables.$color-white;
+    background-color: variables.$color-gray-medium;
     color: variables.$color-black;
-    padding: variables.$space-xxl variables.$space-2xl; // 1.5rem 2rem
-    margin: 0 variables.$size-6xl; // 100px
+    padding: variables.$space-xxl variables.$space-2xl;
+    margin: 0 variables.$size-6xl;
     width: calc(100vw - 250px);
     border-radius: variables.$size-m;
     box-sizing: border-box;
@@ -83,7 +128,7 @@
 }
 
 .profile-btn {
-    padding: variables.$size-l variables.$size-xl; // 10px 20px
+    padding: variables.$size-l variables.$size-xl;
     background-color: variables.$color-green;
     color: variables.$color-white;
     font-size: variables.$space-base;
@@ -93,3 +138,116 @@
     cursor: pointer;
 }
 
+/* 📱 Responsive mobile */
+@media screen and (max-width: 768px) {
+    .profile-account {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: variables.$space-xl;
+        margin: 0 variables.$space-base;
+        width: auto;
+    }
+
+    .profile-btn {
+        width: 100%;
+        margin-top: variables.$space-base;
+    }
+
+    .edit-form input,
+    .edit-form button {
+        width: 100%;
+    }
+
+    .profile-edit-button {
+        width: auto;
+        padding: variables.$size-l variables.$size-xl;
+    }
+}
+
+/* --- Bloc formulaire de modification de nom --- */
+.edit-profile {
+    background-color: variables.$color-white;
+    max-width: 400px;
+    margin: variables.$space-2xl auto;
+    padding: variables.$space-2xl;
+    border-radius: variables.$space-s;
+    text-align: center;
+    color: variables.$color-blue-dark;
+}
+
+.edit-profile h2 {
+    margin-bottom: variables.$space-xl;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: variables.$space-base;
+    margin-top: variables.$space-base;
+    padding: variables.$space-base;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 80%;
+    margin-bottom: variables.$space-base;
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: variables.$space-xs;
+        color: variables.$color-blue-dark;
+    }
+
+    input {
+        width: 100%;
+        padding: variables.$space-s;
+        font-size: variables.$space-base;
+        border: 1px solid variables.$color-border-light;
+        border-radius: variables.$size-s;
+
+        &:disabled {
+            background-color: variables.$color-bg-very-light;
+            color: variables.$color-gray-lighter;
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: variables.$space-base;
+    margin-top: variables.$space-xl;
+
+    .btn {
+        background-color: variables.$color-green;
+        color: variables.$color-white;
+        padding: variables.$space-sm variables.$space-2xl;
+        border: none;
+        border-radius: variables.$size-s;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: variables.$color-dark-green;
+        }
+
+        &.cancel {
+            background-color: variables.$color-gray-medium;
+        }
+    }
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 1rem;
+}

@@ -1,5 +1,6 @@
+@charset "UTF-8";
 .profile-container {
-  background-color: #12002b;
+  background-color: #fff;
   padding: 0;
   min-height: 100vh;
   display: flex;
@@ -36,6 +37,51 @@
   border-radius: 5px;
 }
 
+/* ✅ Bloc formulaire en colonne */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+/* Champ input */
+.edit-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #555;
+  border-radius: 5px;
+  width: 300px;
+  max-width: 80%;
+}
+
+/* Boutons Save et Cancel */
+.edit-form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 180px;
+  max-width: 90%;
+  transition: background-color 0.2s ease;
+}
+
+/* Bouton Save */
+.edit-form button:first-of-type {
+  background-color: #00bc77;
+  color: #fff;
+}
+
+/* Bouton Cancel */
+.edit-form button:last-of-type {
+  background-color: #333;
+  color: #fff;
+}
+
 .profile-accounts {
   display: flex;
   flex-direction: column;
@@ -49,7 +95,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #333;
   color: #000;
   padding: 1.5rem 2rem;
   margin: 0 100px;
@@ -89,4 +135,108 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* 📱 Responsive mobile */
+@media screen and (max-width: 768px) {
+  .profile-account {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.3rem;
+    margin: 0 1rem;
+    width: auto;
+  }
+  .profile-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .edit-form input,
+  .edit-form button {
+    width: 100%;
+  }
+  .profile-edit-button {
+    width: auto;
+    padding: 10px 20px;
+  }
+}
+/* --- Bloc formulaire de modification de nom --- */
+.edit-profile {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.edit-profile h2 {
+  margin-bottom: 1.3rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.input-wrapper {
+  width: 100%;
+  max-width: 80%;
+  margin-bottom: 1rem;
+}
+.input-wrapper label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #2c3e50;
+}
+.input-wrapper input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input-wrapper input:disabled {
+  background-color: #eee;
+  color: #999;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+.button-group .btn {
+  background-color: #00bc77;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.button-group .btn:hover {
+  background-color: #00965d;
+}
+.button-group .btn.cancel {
+  background-color: #333;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
 }/*# sourceMappingURL=Profile.css.map */

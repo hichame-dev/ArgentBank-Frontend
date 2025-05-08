@@ -25,7 +25,9 @@ const Header = () => {
                 {user ? (
                     <>
                         <span className="user-name">{user.userName}</span>
-                        <i className="fa fa-user-circle icon" title="Profile"></i>
+                        <Link to="/profile">
+                            <i className="fa fa-user-circle icon" title="Profile"></i>
+                        </Link>
                         <i className="fa fa-cog icon" title="Settings"></i>
                         <i
                             className="fa fa-sign-out icon logout"

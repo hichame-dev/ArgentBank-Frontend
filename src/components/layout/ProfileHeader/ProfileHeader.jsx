@@ -33,7 +33,9 @@ const ProfileHeader = () => {
 
             <div className="main-nav-items">
                 <span className="main-nav-user">{userName}</span>
-                <i className="fa fa-user-circle icon" title="Account"></i>
+                <Link to="/profile">
+                    <i className="fa fa-user-circle icon" title="Account"></i>
+                </Link>
                 <i className="fa fa-cog icon" title="Settings"></i>
                 <i
                     className="fa fa-sign-out-alt icon logout"
