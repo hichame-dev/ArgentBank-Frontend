@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// Chargement initial depuis localStorage
 const initialState = {
     token: localStorage.getItem('token') || null,
-    user: null,
+    user: JSON.parse(localStorage.getItem('user')) || null,
 }
 
 const authSlice = createSlice({
@@ -14,15 +15,17 @@ const authSlice = createSlice({
             state.token = action.payload.token
             localStorage.setItem('token', action.payload.token)
         },
+        setUser: (state, action) => {
+            console.log('[authSlice] setUser:', action.payload)
+            state.user = action.payload
+            localStorage.setItem('user', JSON.stringify(action.payload))
+        },
         logout: (state) => {
             console.log('[authSlice] logout')
             state.token = null
             state.user = null
             localStorage.removeItem('token')
-        },
-        setUser: (state, action) => {
-            console.log('[authSlice] setUser:', action.payload)
-            state.user = action.payload
+            localStorage.removeItem('user')
         },
     },
 })

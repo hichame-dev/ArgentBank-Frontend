@@ -22,7 +22,7 @@ const Profile = () => {
         const fetchProfile = async () => {
             try {
                 const res = await fetch('http://localhost:3001/api/v1/user/profile', {
-                    method: 'POST',
+                    method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
                         Authorization: `Bearer ${token}`,
