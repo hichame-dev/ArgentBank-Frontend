@@ -8,7 +8,7 @@ import securityIcon from '../../assets/img/icon-security.png'
 import backgroundImage from '../../assets/img/bank-tree.jpeg'
 
 const Home = () => {
-    console.log('[Home.jsx] Page loaded')
+    // console.log('[Home.jsx] Page loaded')
 
     return (
         <section className="home">

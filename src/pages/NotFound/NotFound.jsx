@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const NotFound = () => {
-    console.log('[NotFound.jsx] Page introuvable chargée')
+    // console.log('[NotFound.jsx] Page introuvable chargée')
 
     return (
         <div className="notfound">

@@ -14,7 +14,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('[Login] Attempt login with:', email)
+        // console.log('[Login] Attempt login with:', email)
 
         try {
             // 🔐 Connexion à l'API

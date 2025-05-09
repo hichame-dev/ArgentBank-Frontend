@@ -2,7 +2,7 @@ import React from 'react'
 import './Transaction.scss' // Importation du fichier SCSS pour ce composant
 
 const Transactions = () => {
-    console.log('[Transactions.jsx] Loaded transaction list')
+    // console.log('[Transactions.jsx] Loaded transaction list')
 
     const accounts = [
         {
