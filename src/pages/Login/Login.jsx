@@ -39,6 +39,8 @@ const Login = () => {
             }
 
             dispatch(loginSuccess({ token }))
+            // Enregistrement du token dans le localStorage
+            localStorage.setItem('token', token)
 
             // 📡 Appel sécurisé au profil
             const profileResponse = await fetch('http://localhost:3001/api/v1/user/profile', {

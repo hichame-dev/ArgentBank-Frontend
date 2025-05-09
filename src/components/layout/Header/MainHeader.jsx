@@ -13,8 +13,11 @@ const Header = () => {
     const handleLogout = () => {
         console.log('[Header.jsx] Logging out...')
         dispatch(logout())
-        navigate('/')
-    }
+        // 🔓 Supprime le token pour nettoyer la session côté navigateur
+        localStorage.removeItem('token')
+            navigate('/')
+        }
+        
 
     return (
         <header className="header">
