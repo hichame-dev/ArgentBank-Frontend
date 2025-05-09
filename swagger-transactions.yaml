@@ -1,0 +1,104 @@
+swagger: '2.0'
+info:
+  version: "1.0.0"
+  title: Argent Bank - Transactions API
+  description: API pour gérer les transactions bancaires de l'utilisateur
+
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+
+paths:
+  /user/accounts:
+    get:
+      summary: Récupère la liste des comptes de l'utilisateur
+      description: Retourne tous les comptes associés à l'utilisateur authentifié
+      tags:
+        - Transactions
+      security:
+        - Bearer: []
+      responses:
+        200:
+          description: Liste des comptes
+        401:
+          description: Non autorisé
+
+  /user/accounts/{accountId}/transactions:
+    get:
+      summary: Récupère les transactions d'un compte pour le mois courant
+      tags:
+        - Transactions
+      security:
+        - Bearer: []
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          type: string
+          description: ID du compte
+      responses:
+        200:
+          description: Liste des transactions
+        401:
+          description: Non autorisé
+        404:
+          description: Compte non trouvé
+
+  /user/transactions/{transactionId}:
+    get:
+      summary: Récupère le détail d'une transaction spécifique
+      tags:
+        - Transactions
+      security:
+        - Bearer: []
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          type: string
+          description: ID de la transaction
+      responses:
+        200:
+          description: Détail de la transaction
+        401:
+          description: Non autorisé
+        404:
+          description: Transaction non trouvée
+
+    patch:
+      summary: Met à jour une transaction (note, catégorie)
+      tags:
+        - Transactions
+      security:
+        - Bearer: []
+      parameters:
+        - name: transactionId
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: transactionUpdate
+          required: true
+          schema:
+            type: object
+            properties:
+              category:
+                type: string
+              note:
+                type: string
+      responses:
+        200:
+          description: Transaction mise à jour
+        400:
+          description: Requête invalide
+        401:
+          description: Non autorisé
+        404:
+          description: Transaction non trouvée
+
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header

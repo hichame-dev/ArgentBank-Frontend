@@ -10,3 +10,13 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## 📄 Phase 2 — API Transactions (Swagger)
+
+Dans le cadre de la phase 2 du projet, 1 fichiers a été ajouté à la racine de ce dossier :
+
+- `swagger-transactions.yaml` : Document Swagger décrivant les endpoints pour la gestion des transactions
+
+
+👉 Ce fichiers est consultables et testables via [Swagger Editor](https://editor.swagger.io/)
+
