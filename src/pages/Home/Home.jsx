@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.scss'
- // Ou le chemin approprié
+// Ou le chemin approprié
 
 import chatIcon from '../../assets/img/icon-chat.png'
 import moneyIcon from '../../assets/img/icon-money.png'
@@ -8,7 +8,7 @@ import securityIcon from '../../assets/img/icon-security.png'
 import backgroundImage from '../../assets/img/bank-tree.jpeg'
 
 const Home = () => {
-    // console.log('[Home.jsx] Page loaded')
+
 
     return (
         <section className="home">

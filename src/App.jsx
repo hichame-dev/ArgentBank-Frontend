@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound/NotFound'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import TransactionsPage from './pages/TransactionsPage/TransactionsPage'
 
-console.log('[App.jsx] App routes loaded')
+
 
 function App() {
   const dispatch = useDispatch()

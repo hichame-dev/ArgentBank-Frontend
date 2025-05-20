@@ -14,7 +14,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // console.log('[Login] Attempt login with:', email)
+        
 
         try {
             // 🔐 Connexion à l'API
@@ -29,7 +29,7 @@ const Login = () => {
             }
 
             const loginData = await loginResponse.json()
-            console.log('[Login] Login response:', loginData)
+            
 
             const token = loginData?.body?.token
             if (!token) {
@@ -56,7 +56,7 @@ const Login = () => {
             }
 
             const profileData = await profileResponse.json()
-            console.log('[Login] Profile response:', profileData)
+            
 
             if (profileData.body) {
                 dispatch(setUser(profileData.body))
