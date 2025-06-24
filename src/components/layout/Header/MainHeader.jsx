@@ -8,6 +8,7 @@ import './MainHeader.scss'
 const Header = () => {
     const user = useSelector((state) => state.auth.user)
     const dispatch = useDispatch()
+    console.log('User in Header:', user) // Pour vérifier l'utilisateur connecté
     const navigate = useNavigate()
 
     const handleLogout = () => {
