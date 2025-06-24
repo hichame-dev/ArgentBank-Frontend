@@ -1,9 +1,25 @@
+@charset "UTF-8";
+/* ========================
+   Section Home principale
+======================== */
+.home {
+  /* ======================
+     HERO BANNER
+  ====================== */
+  /* ======================
+    FEATURES SECTION
+  ====================== */
+  /* ======================
+    ACCESSIBILITÉ (hidden text)
+  ====================== */
+}
 .home .hero {
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
   position: relative;
+  /* 📺 Responsive Desktop */
 }
 .home .hero .hero-content {
   position: relative;

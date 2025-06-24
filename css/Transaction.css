@@ -1,5 +1,5 @@
 /* ==========================
-   Transactions Styles
+   Transactions Page Styles
 ========================== */
 .transactions {
   display: flex;
@@ -10,7 +10,21 @@
   padding: 2rem 0;
   box-sizing: border-box;
 }
+@media (min-width: 400px) {
+  .transactions {
+    width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .transactions {
+    width: 100%;
+    padding: 1.3rem;
+  }
+}
 
+/* ==========================
+   Account Info Block
+========================== */
 .account {
   display: flex;
   flex-direction: column;
@@ -22,6 +36,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   text-align: left;
+}
+@media (max-width: 768px) {
+  .account {
+    padding: 1.3rem;
+  }
 }
 
 .account-title {
@@ -43,6 +62,9 @@
   color: #555;
 }
 
+/* ==========================
+   Button Styles
+========================== */
 .transaction-button {
   padding: 10px 20px;
   background-color: #00bc77;
@@ -59,18 +81,14 @@
 .transaction-button:hover {
   background-color: #00965d;
 }
-
-/* ==========================
-   Responsiveness Styles
-========================== */
 @media (min-width: 400px) {
-  .transactions {
-    width: 60%;
-  }
-  .account {
-    width: 100%;
-  }
   .transaction-button {
     width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .transaction-button {
+    width: 100%;
+    align-self: stretch;
   }
 }/*# sourceMappingURL=Transaction.css.map */

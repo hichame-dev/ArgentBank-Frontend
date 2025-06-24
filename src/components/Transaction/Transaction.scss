@@ -1,7 +1,7 @@
 @use '../../Styles/variables' as variables;
 
 /* ==========================
-   Transactions Styles
+   Transactions Page Styles
 ========================== */
 .transactions {
     display: flex;
@@ -11,8 +11,20 @@
     width: variables.$percent-80;
     padding: variables.$space-2xl 0;
     box-sizing: border-box;
+
+    @media (min-width: variables.$size-11xl) {
+        width: variables.$percent-60;
+    }
+
+    @media (max-width: variables.$breakpoint-md) {
+        width: 100%;
+        padding: variables.$space-xl;
+    }
 }
 
+/* ==========================
+   Account Info Block
+========================== */
 .account {
     display: flex;
     flex-direction: column;
@@ -20,10 +32,14 @@
     background-color: variables.$color-white;
     padding: variables.$space-xxl;
     margin-bottom: variables.$space-base;
-    border-radius: variables.$size-m; // 5px
+    border-radius: variables.$size-m;
     box-shadow: 0 variables.$size-sm variables.$size-m rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: left;
+
+    @media (max-width: variables.$breakpoint-md) {
+        padding: variables.$space-xl;
+    }
 }
 
 .account-title {
@@ -45,6 +61,9 @@
     color: variables.$color-gray-light;
 }
 
+/* ==========================
+   Button Styles
+========================== */
 .transaction-button {
     padding: variables.$size-l variables.$size-xl;
     background-color: variables.$color-green;
@@ -59,23 +78,15 @@
     align-self: flex-end;
 
     &:hover {
-        background-color: variables.$color-dark-green; // Remplacé le darken() pour éviter les erreurs
-    }
-}
-
-/* ==========================
-   Responsiveness Styles
-========================== */
-@media (min-width: variables.$size-11xl) {
-    .transactions {
-        width: variables.$percent-60;
+        background-color: variables.$color-dark-green;
     }
 
-    .account {
-        width: 100%;
-    }
-
-    .transaction-button {
+    @media (min-width: variables.$size-11xl) {
         width: variables.$size-8xl; // 200px
+    }
+
+    @media (max-width: variables.$breakpoint-md) {
+        width: 100%;
+        align-self: stretch;
     }
 }

@@ -7,12 +7,14 @@
     background-color: variables.$color-white;
     padding: variables.$space-base variables.$space-2xl;
     border-bottom: variables.$size-xs solid variables.$color-bg-light;
+    position: relative;
 }
 
 .main-nav-logo img {
     max-height: variables.$size-3xl; // 40px
 }
 
+/* ============ Desktop Nav ============ */
 .main-nav-items {
     display: flex;
     align-items: center;
@@ -41,5 +43,56 @@
 
     .logout:hover {
         color: variables.$color-error;
+    }
+}
+
+/* ============ Burger Button ============ */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+
+    .bar {
+        width: 22px;
+        height: 3px;
+        background-color: variables.$color-green;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+}
+
+/* ============ Mobile Responsive ============ */
+@media (max-width: 480px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .burger {
+        display: flex;
+        margin-left: auto;
+        margin-top: -1.5rem; // remonte un peu le burger si besoin
+    }
+
+    .main-nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: variables.$space-base;
+        width: 100%;
+        margin-top: -0.5rem; // 🔼 colle le menu juste sous le logo
+
+        .main-nav-user {
+            margin-bottom: variables.$space-xs;
+        }
+    }
+
+    .main-nav-items.open {
+        display: flex;
     }
 }

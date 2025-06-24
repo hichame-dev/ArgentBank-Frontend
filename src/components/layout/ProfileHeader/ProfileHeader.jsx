@@ -8,6 +8,7 @@ import './ProfileHeader.scss'
 const ProfileHeader = () => {
     const userName = useSelector((state) => state.auth.user?.userName || 'User')
     const [message, setMessage] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -18,6 +19,10 @@ const ProfileHeader = () => {
             setMessage('')
             navigate('/')
         }, 2000)
+    }
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
     }
 
     return (
@@ -31,12 +36,21 @@ const ProfileHeader = () => {
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>
 
-            <div className="main-nav-items">
+            {/* Burger button */}
+            <button className="burger" onClick={toggleMenu} aria-label="Menu">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
+
+            <div className={`main-nav-items ${isOpen ? 'open' : ''}`}>
                 <span className="main-nav-user">{userName}</span>
                 <Link to="/profile">
                     <i className="fa fa-user-circle icon" title="Account"></i>
                 </Link>
-                <i className="fa fa-cog icon" title="Settings"></i>
+                <Link to="/settings">
+                    <i className="fa fa-cog icon" title="Settings"></i>
+                </Link>
                 <i
                     className="fa fa-sign-out-alt icon logout"
                     title="Logout"

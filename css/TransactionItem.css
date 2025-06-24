@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/* ========================
+   Transaction Item (Accordion)
+======================== */
 .transaction-item {
   background-color: #00bc77;
   color: #333;
@@ -5,6 +9,9 @@
   overflow: hidden;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
+  /* === Bandeau principal === */
+  /* === Détails affichés au clic === */
+  /* 📱 Responsive Mobile */
 }
 .transaction-item .transaction-main {
   display: flex;
@@ -39,4 +46,21 @@
   font-size: 1rem;
   color: #fff;
   align-self: start;
+}
+@media (max-width: 768px) {
+  .transaction-item .transaction-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .transaction-item .transaction-main span {
+    width: 100%;
+    text-align: left;
+  }
+  .transaction-item .transaction-main .arrow {
+    align-self: flex-end;
+  }
+  .transaction-item .transaction-details {
+    padding: 1.3rem;
+  }
 }/*# sourceMappingURL=TransactionItem.css.map */

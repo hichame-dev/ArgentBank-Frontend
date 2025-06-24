@@ -66,4 +66,21 @@
   font-size: 0.9rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sign-in-content {
+    width: 90%;
+    padding: 1.3rem;
+    margin-top: 2.5rem;
+  }
+  .sign-in-content h1 {
+    font-size: 1.2rem;
+  }
+  .sign-in-content .sign-in-icon {
+    font-size: 3rem;
+  }
+  .sign-in-content .sign-in-button {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=Login.css.map */

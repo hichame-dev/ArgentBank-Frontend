@@ -77,3 +77,23 @@
     margin-bottom: variables.$space-base;
     text-align: center;
 }
+
+@media (max-width: variables.$breakpoint-md) {
+    .sign-in-content {
+        width: 90%;
+        padding: variables.$space-xl;
+        margin-top: variables.$space-3xl; // 2.5rem (~40px)
+
+        h1 {
+            font-size: variables.$font-md;
+        }
+
+        .sign-in-icon {
+            font-size: 3rem;
+        }
+
+        .sign-in-button {
+            font-size: variables.$font-sm;
+        }
+    }
+}

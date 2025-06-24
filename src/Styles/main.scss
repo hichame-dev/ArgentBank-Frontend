@@ -1,20 +1,14 @@
 @use './variables.scss' as *;
-/* ==========================
-   Variables
-========================== */
-$primary-color: #00bc77;
-$text-color: #2c3e50;
-$bg-dark: #12002b;
 
 /* ==========================
-   Reset / Global
+   🌍 Reset / Global
 ========================== */
 html {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: $text-color;
+    color: $color-blue-dark;
 }
 
 body {
@@ -22,6 +16,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: $color-white;
+    font-size: $font-sm;
 }
 
 .main {
@@ -29,11 +25,11 @@ body {
 }
 
 .bg-dark {
-    background-color: $bg-dark;
+    background-color: $color-purple-dark;
 }
 
 .sr-only {
-    border: 0 !important;
+    border: $size-none !important;
     clip: rect(1px, 1px, 1px, 1px) !important;
     -webkit-clip-path: inset(50%) !important;
     clip-path: inset(50%) !important;
@@ -44,4 +40,29 @@ body {
     position: absolute !important;
     width: 1px !important;
     white-space: nowrap !important;
+}
+
+/* ==========================
+   📱 Responsive Utilities
+========================== */
+
+.container {
+    width: $percent-full;
+    max-width: $size-max-w-xl;
+    margin: 0 auto;
+    padding: $space-base;
+
+    @media (max-width: $breakpoint-md) {
+        padding: $space-sm;
+    }
+}
+
+.responsive-flex {
+    display: flex;
+    gap: $space-lg;
+
+    @media (max-width: $breakpoint-md) {
+        flex-direction: column;
+        gap: $space-sm;
+    }
 }

@@ -1,6 +1,13 @@
- @use '../../Styles/variables' as variables;
+@use '../../Styles/variables' as variables;
 
+/* ========================
+   Section Home principale
+======================== */
 .home {
+
+    /* ======================
+     HERO BANNER
+  ====================== */
     .hero {
         background-position: 0 -50px;
         background-size: cover;
@@ -29,6 +36,7 @@
             }
         }
 
+        /* 📺 Responsive Desktop */
         @media (min-width: variables.$size-max-w-lg) {
             height: variables.$size-11xl; // 400px
             background-position: 0% variables.$percent-33;
@@ -51,6 +59,9 @@
         }
     }
 
+    /* ======================
+    FEATURES SECTION
+  ====================== */
     .features {
         display: flex;
         flex-direction: column;
@@ -80,6 +91,9 @@
         }
     }
 
+    /* ======================
+    ACCESSIBILITÉ (hidden text)
+  ====================== */
     .sr-only {
         border: 0 !important;
         clip: rect(1px, 1px, 1px, 1px) !important;

@@ -1,13 +1,17 @@
-@use '../../Styles/variables' as variables; // Import correct
+@use '../../Styles/variables' as variables;
 
+/* ========================
+   Transaction Item (Accordion)
+======================== */
 .transaction-item {
     background-color: variables.$color-green;
     color: variables.$color-gray-medium;
     border-radius: variables.$size-m; // 5px
     overflow: hidden;
-    margin-bottom: variables.$space-xxl; // 1.5rem 
+    margin-bottom: variables.$space-xxl; // 1.5rem
     transition: all 0.3s ease;
 
+    /* === Bandeau principal === */
     .transaction-main {
         display: flex;
         align-items: center;
@@ -33,6 +37,7 @@
         }
     }
 
+    /* === Détails affichés au clic === */
     .transaction-details {
         background-color: variables.$color-green-light;
         padding: variables.$space-xxl;
@@ -45,6 +50,28 @@
             font-size: variables.$space-base;
             color: variables.$color-white;
             align-self: start;
+        }
+    }
+
+    /* 📱 Responsive Mobile */
+    @media (max-width: variables.$breakpoint-md) {
+        .transaction-main {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: variables.$space-s;
+
+            span {
+                width: 100%;
+                text-align: left;
+            }
+
+            .arrow {
+                align-self: flex-end;
+            }
+        }
+
+        .transaction-details {
+            padding: variables.$space-xl;
         }
     }
 }

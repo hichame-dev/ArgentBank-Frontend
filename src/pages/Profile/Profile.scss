@@ -1,5 +1,8 @@
 @use '../../Styles/variables' as variables;
 
+/* ========================
+   Container principal
+======================== */
 .profile-container {
     background-color: variables.$color-white;
     padding: 0;
@@ -9,6 +12,9 @@
     gap: variables.$space-2xl;
 }
 
+/* ========================
+   Header du profil
+======================== */
 .profile-header {
     background-color: variables.$color-purple-dark;
     color: variables.$color-white;
@@ -16,15 +22,20 @@
     text-align: center;
     width: 100%;
     margin-bottom: variables.$space-base;
+
+    h1 {
+        font-size: variables.$space-3xl;
+        margin: 0;
+        padding: 0;
+    }
 }
 
-.profile-header h1 {
-    font-size: variables.$space-3xl;
-    margin: 0;
-    padding: 0;
-}
-
+/* ========================
+   Bouton Modifier nom
+======================== */
 .profile-edit-button {
+    border: none;
+    border-radius: variables.$size-m;
     border-color: variables.$color-green;
     background-color: variables.$color-green;
     color: variables.$color-white;
@@ -34,11 +45,16 @@
     width: variables.$size-7xl;
     text-align: center;
     cursor: pointer;
-    border: none;
-    border-radius: variables.$size-m;
+
+    @media (max-width: variables.$breakpoint-md) {
+        width: auto;
+        padding: variables.$size-l variables.$size-xl;
+    }
 }
 
-/* ✅ Bloc formulaire en colonne */
+/* ========================
+   Formulaire édition
+======================== */
 .edit-form {
     display: flex;
     flex-direction: column;
@@ -46,43 +62,46 @@
     gap: variables.$space-base;
     margin-top: variables.$space-base;
     padding: variables.$space-base;
+
+    input {
+        padding: variables.$size-l;
+        font-size: variables.$space-base;
+        border: 1px solid variables.$color-gray-light;
+        border-radius: variables.$size-m;
+        width: 300px;
+        max-width: 80%;
+    }
+
+    button {
+        padding: variables.$size-l variables.$size-xl;
+        font-size: variables.$space-base;
+        font-weight: bold;
+        border: none;
+        border-radius: variables.$size-m;
+        cursor: pointer;
+        width: 180px;
+        max-width: 90%;
+        transition: background-color 0.2s ease;
+
+        &:first-of-type {
+            background-color: variables.$color-green;
+            color: variables.$color-white;
+        }
+
+        &:last-of-type {
+            background-color: variables.$color-gray-medium;
+            color: variables.$color-white;
+        }
+
+        @media (max-width: variables.$breakpoint-md) {
+            width: 100%;
+        }
+    }
 }
 
-/* Champ input */
-.edit-form input {
-    padding: variables.$size-l;
-    font-size: variables.$space-base;
-    border: 1px solid variables.$color-gray-light;
-    border-radius: variables.$size-m;
-    width: 300px;
-    max-width: 80%;
-}
-
-/* Boutons Save et Cancel */
-.edit-form button {
-    padding: variables.$size-l variables.$size-xl;
-    font-size: variables.$space-base;
-    font-weight: bold;
-    border: none;
-    border-radius: variables.$size-m;
-    cursor: pointer;
-    width: 180px;
-    max-width: 90%;
-    transition: background-color 0.2s ease;
-}
-
-/* Bouton Save */
-.edit-form button:first-of-type {
-    background-color: variables.$color-green;
-    color: variables.$color-white;
-}
-
-/* Bouton Cancel */
-.edit-form button:last-of-type {
-    background-color: variables.$color-gray-medium;
-    color: variables.$color-white;
-}
-
+/* ========================
+   Liste des comptes
+======================== */
 .profile-accounts {
     display: flex;
     flex-direction: column;
@@ -105,26 +124,14 @@
     box-sizing: border-box;
     box-shadow: 0 variables.$size-sm variables.$size-m rgba(0, 0, 0, 0.1);
     text-align: left;
-}
 
-.profile-account-title {
-    font-size: variables.$space-lg;
-    font-weight: bold;
-    color: variables.$color-gray-medium;
-    margin: 0;
-}
-
-.profile-account-amount {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: variables.$color-green;
-    margin: variables.$space-s 0;
-}
-
-.profile-account-desc {
-    font-size: variables.$space-base;
-    color: variables.$color-gray-light;
-    margin: 0;
+    @media (max-width: variables.$breakpoint-md) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: variables.$space-xl;
+        margin: 0 variables.$space-base;
+        width: auto;
+    }
 }
 
 .profile-btn {
@@ -136,35 +143,16 @@
     border: none;
     border-radius: variables.$size-m;
     cursor: pointer;
-}
 
-/* 📱 Responsive mobile */
-@media screen and (max-width: 768px) {
-    .profile-account {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: variables.$space-xl;
-        margin: 0 variables.$space-base;
-        width: auto;
-    }
-
-    .profile-btn {
+    @media (max-width: variables.$breakpoint-md) {
         width: 100%;
         margin-top: variables.$space-base;
     }
-
-    .edit-form input,
-    .edit-form button {
-        width: 100%;
-    }
-
-    .profile-edit-button {
-        width: auto;
-        padding: variables.$size-l variables.$size-xl;
-    }
 }
 
-/* --- Bloc formulaire de modification de nom --- */
+/* ========================
+   Bloc edit-profile
+======================== */
 .edit-profile {
     background-color: variables.$color-white;
     max-width: 400px;
@@ -173,21 +161,15 @@
     border-radius: variables.$space-s;
     text-align: center;
     color: variables.$color-blue-dark;
+
+    h2 {
+        margin-bottom: variables.$space-xl;
+    }
 }
 
-.edit-profile h2 {
-    margin-bottom: variables.$space-xl;
-}
-
-.edit-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: variables.$space-base;
-    margin-top: variables.$space-base;
-    padding: variables.$space-base;
-}
-
+/* ========================
+   Champ input-wrapper
+======================== */
 .input-wrapper {
     width: 100%;
     max-width: 80%;
@@ -214,6 +196,9 @@
     }
 }
 
+/* ========================
+   Groupe de boutons
+======================== */
 .button-group {
     display: flex;
     justify-content: center;
@@ -240,14 +225,84 @@
     }
 }
 
-.success-message {
-    color: green;
+/* ========================
+   Messages
+======================== */
+.success-message,
+.error-message {
     font-weight: bold;
     margin-top: 1rem;
 }
 
+.success-message {
+    color: green;
+}
+
 .error-message {
     color: red;
-    font-weight: bold;
-    margin-top: 1rem;
+}
+
+/* ========================
+   📱 Responsive mobile
+======================== */
+@media (max-width: variables.$breakpoint-md) {
+    .profile-container {
+        gap: variables.$space-xl;
+    }
+
+    .profile-header h1 {
+        font-size: variables.$font-md;
+    }
+
+    .profile-edit-button {
+        width: auto;
+        padding: variables.$size-l variables.$size-xl;
+    }
+
+    .edit-form {
+        padding: variables.$space-base;
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .profile-accounts {
+        gap: variables.$space-2xl;
+    }
+
+    .profile-account {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: variables.$space-xl;
+        margin: 0 variables.$space-base;
+        width: auto;
+    }
+
+    .profile-btn {
+        width: 100%;
+        margin-top: variables.$space-base;
+    }
+
+    .edit-profile {
+        margin: variables.$space-xl auto;
+        padding: variables.$space-xl;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .input-wrapper {
+        max-width: 100%;
+    }
 }

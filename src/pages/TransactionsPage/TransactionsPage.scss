@@ -1,4 +1,4 @@
- @use '../../Styles/variables' as variables;
+@use '../../Styles/variables' as variables;
 
 .transactions-page {
     background-color: variables.$color-white;
@@ -16,30 +16,41 @@
     align-items: center;
     background-color: variables.$color-gray-medium;
     padding: variables.$space-2xl;
-    border-radius: variables.$size-s; // 8px (proche)
+    border-radius: variables.$size-s;
     margin-bottom: variables.$space-2xl;
+
+    @media (max-width: variables.$breakpoint-md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: variables.$space-base;
+        text-align: left;
+    }
 }
 
 .account-summary h3 {
     margin: 0;
-    font-size: variables.$space-xxl; // 1.5rem
+    font-size: variables.$space-xxl;
 }
 
 .account-balance {
-    font-size: variables.$space-3xl; // 2rem
+    font-size: variables.$space-3xl;
     font-weight: bold;
     margin: variables.$space-s 0;
 }
 
 .balance-label {
-    font-size: 0.9rem; // variable personnalisée à ajouter si souhaité
+    font-size: 0.9rem; // Ajout possible en variable perso
     color: variables.$color-border-light;
 }
 
 .close-btn {
-    font-size: variables.$space-3xl; // 2rem
+    font-size: variables.$space-3xl;
     color: variables.$color-white;
     cursor: pointer;
+
+    @media (max-width: variables.$breakpoint-md) {
+        align-self: flex-end;
+    }
 }
 
 /* ==========================
@@ -52,7 +63,7 @@
     background-color: variables.$color-white;
     color: variables.$color-blue-dark;
     padding: variables.$space-base variables.$space-2xl;
-    border-bottom: variables.$size-s solid variables.$color-green; // 4px solid
+    border-bottom: variables.$size-s solid variables.$color-green;
     border-radius: variables.$size-s variables.$size-s 0 0;
     margin-bottom: variables.$space-base;
 
@@ -64,5 +75,14 @@
     span:nth-child(3),
     span:nth-child(4) {
         text-align: right;
+    }
+
+    @media (max-width: variables.$breakpoint-md) {
+        flex-direction: column;
+        gap: variables.$space-sm;
+
+        span {
+            text-align: left !important;
+        }
     }
 }

@@ -1,8 +1,6 @@
+@charset "UTF-8";
 /* ==========================
-   Variables
-========================== */
-/* ==========================
-   Reset / Global
+   🌍 Reset / Global
 ========================== */
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,6 +15,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #fff;
+  font-size: 1rem;
 }
 
 .main {
@@ -28,7 +28,7 @@ body {
 }
 
 .sr-only {
-  border: 0 !important;
+  border: 0px !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important;
@@ -39,4 +39,30 @@ body {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+/* ==========================
+   📱 Responsive Utilities
+========================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0.6rem;
+  }
+}
+
+.responsive-flex {
+  display: flex;
+  gap: 1.25rem;
+}
+@media (max-width: 768px) {
+  .responsive-flex {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
 }/*# sourceMappingURL=main.css.map */
