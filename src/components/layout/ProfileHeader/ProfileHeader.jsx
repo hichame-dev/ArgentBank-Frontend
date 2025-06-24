@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../../redux/slices/authSlice'
-import logo from '../../../assets/img/argentBankLogo.png'
+import logo from '../../../assets/img/argentBankLogo.webp'
 import './ProfileHeader.scss'
 
 const ProfileHeader = () => {
-    const userName = useSelector((state) => state.auth.user?.userName || 'User')
+    const userName = useSelector((state) => state.auth.username || 'User') // ✅ maintenant depuis Redux
     const [message, setMessage] = useState('')
     const [isOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch()
@@ -32,6 +32,7 @@ const ProfileHeader = () => {
                     className="main-nav-logo-image"
                     src={logo}
                     alt="Argent Bank Logo"
+                    loading="lazy"
                 />
                 <h1 className="sr-only">Argent Bank</h1>
             </Link>

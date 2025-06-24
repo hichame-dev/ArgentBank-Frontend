@@ -2,33 +2,35 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../../redux/slices/authSlice'
 import { useNavigate, Link } from 'react-router-dom'
-import logo from '../../../assets/img/argentBankLogo.png'
+import logo from '../../../assets/img/argentBankLogo.webp'
 import './MainHeader.scss'
 
 const Header = () => {
-    const user = useSelector((state) => state.auth.user)
+    const username = useSelector((state) => state.auth.username)
     const dispatch = useDispatch()
-    console.log('User in Header:', user) // Pour vérifier l'utilisateur connecté
     const navigate = useNavigate()
 
     const handleLogout = () => {
-
         dispatch(logout())
-        // 🔓 Supprime le token pour nettoyer la session côté navigateur
         localStorage.removeItem('token')
         navigate('/')
     }
 
-
     return (
         <header className="header">
             <Link to="/" className="header-logo">
-                <img src={logo} alt="Argent Bank Logo" className="header-logo-img" />
+                <img
+                    src={logo}
+                    alt="Argent Bank Logo"
+                    className="header-logo-img"
+                    loading="lazy"
+                />
             </Link>
+
             <nav className="header-nav">
-                {user ? (
+                {username ? (
                     <>
-                        <span className="user-name">{user.userName}</span>
+                        <span className="user-name">{username}</span>
                         <Link to="/profile">
                             <i className="fa fa-user-circle icon" title="Profile"></i>
                         </Link>

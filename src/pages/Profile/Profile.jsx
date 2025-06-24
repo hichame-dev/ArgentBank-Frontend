@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setUser } from '../../redux/slices/authSlice'
+import { setUser, setUsername } from '../../redux/slices/authSlice'
 import './Profile.scss'
 
 const Profile = () => {
@@ -10,7 +10,7 @@ const Profile = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const [username, setUsername] = useState('')
+    const [username, setUsernameInput] = useState('')
     const [originalUsername, setOriginalUsername] = useState('')
     const [isEditing, setIsEditing] = useState(false)
     const [successMessage, setSuccessMessage] = useState('')
@@ -31,7 +31,7 @@ const Profile = () => {
                 const data = await res.json()
                 if (res.ok && data.body) {
                     dispatch(setUser(data.body))
-                    setUsername(data.body.userName)
+                    setUsernameInput(data.body.userName)
                     setOriginalUsername(data.body.userName)
                 }
             } catch (err) {
@@ -54,6 +54,7 @@ const Profile = () => {
             })
             if (res.ok) {
                 dispatch(setUser({ ...user, userName: username }))
+                dispatch(setUsername(username))
                 setOriginalUsername(username)
                 setSuccessMessage('Nom modifié avec succès.')
                 setErrorMessage('')
@@ -65,13 +66,13 @@ const Profile = () => {
                 setErrorMessage("Impossible de modifier le nom d'utilisateur.")
             }
         } catch (err) {
-            console.error("Error while saving profile:", err)
-            setErrorMessage("Erreur réseau. Veuillez réessayer.")
+            console.error('Error while saving profile:', err)
+            setErrorMessage('Erreur réseau. Veuillez réessayer.')
         }
     }
 
     const handleCancel = () => {
-        setUsername(originalUsername)
+        setUsernameInput(originalUsername)
         setIsEditing(false)
     }
 
@@ -108,7 +109,7 @@ const Profile = () => {
                                         id="username"
                                         type="text"
                                         value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
+                                        onChange={(e) => setUsernameInput(e.target.value)}
                                     />
                                 </div>
 
@@ -154,17 +155,7 @@ const Profile = () => {
                             title: 'Argent Bank Checking (x8349)',
                             amount: '$2,082.79',
                             desc: 'Available Balance',
-                            transactions: [
-                                {
-                                    date: '27/02/20',
-                                    description: 'Golden Sun Bakery',
-                                    amount: '$8.00',
-                                    balance: '$298.00',
-                                    type: 'Electronic',
-                                    category: 'Food',
-                                    note: 'Lorem ipsum',
-                                },
-                            ],
+                            transactions: [],
                         },
                         {
                             title: 'Argent Bank Savings (x6712)',

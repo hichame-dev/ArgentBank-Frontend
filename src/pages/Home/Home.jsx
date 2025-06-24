@@ -5,7 +5,7 @@ import './Home.scss'
 import chatIcon from '../../assets/img/icon-chat.png'
 import moneyIcon from '../../assets/img/icon-money.png'
 import securityIcon from '../../assets/img/icon-security.png'
-import backgroundImage from '../../assets/img/bank-tree.jpeg'
+import backgroundImage from '../../assets/img/bank-tree.webp'
 
 const Home = () => {
 
@@ -29,7 +29,7 @@ const Home = () => {
                 <h2 className="sr-only">Features</h2>
 
                 <div className="feature-item">
-                    <img src={chatIcon} alt="Chat Icon" className="feature-icon" />
+                    <img src={chatIcon} alt="Chat Icon" className="feature-icon" loading="lazy" />
                     <h3 className="feature-title">You are our #1 priority</h3>
                     <p>
                         Need to talk to a representative? You can get in touch through our 24/7 chat
@@ -46,7 +46,7 @@ const Home = () => {
                 </div>
 
                 <div className="feature-item">
-                    <img src={securityIcon} alt="Security Icon" className="feature-icon" />
+                    <img src={securityIcon} alt="Security Icon" className="feature-icon" loading="lazy" />
                     <h3 className="feature-title">Security you can trust</h3>
                     <p>
                         We use top of the line encryption to make sure your data and money is always
