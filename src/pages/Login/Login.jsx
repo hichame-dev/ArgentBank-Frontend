@@ -59,7 +59,9 @@ const Login = () => {
             
 
             if (profileData.body) {
+                const username = profileData.body.userName
                 dispatch(setUser(profileData.body))
+                localStorage.setItem('username', username)
             }
 
             // ✅ Redirection
@@ -85,6 +87,7 @@ const Login = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
+                            autoComplete="email"
                         />
                     </div>
 
@@ -96,6 +99,7 @@ const Login = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
+                            autoComplete="current-password"
                         />
                     </div>
 

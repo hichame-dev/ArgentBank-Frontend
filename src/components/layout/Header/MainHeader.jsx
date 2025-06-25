@@ -11,10 +11,12 @@ const Header = () => {
     const navigate = useNavigate()
 
     const handleLogout = () => {
-        dispatch(logout())
-        localStorage.removeItem('token')
-        navigate('/')
-    }
+    dispatch(logout())
+    localStorage.removeItem('token')
+    localStorage.removeItem('username') // ← AJOUT OBLIGATOIRE
+    navigate('/')
+}
+
 
     return (
         <header className="header">
