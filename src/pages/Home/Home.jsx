@@ -2,9 +2,9 @@ import React from 'react'
 import './Home.scss'
 // Ou le chemin approprié
 
-import chatIcon from '../../assets/img/icon-chat.png'
-import moneyIcon from '../../assets/img/icon-money.png'
-import securityIcon from '../../assets/img/icon-security.png'
+import chatIcon from '../../assets/img/icon-chat.webp'
+import moneyIcon from '../../assets/img/icon-money.webp'
+import securityIcon from '../../assets/img/icon-security.avif'
 import backgroundImage from '../../assets/img/bank-tree.webp'
 
 const Home = () => {
