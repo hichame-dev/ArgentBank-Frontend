@@ -44,18 +44,24 @@ const Profile = () => {
 
     const handleSave = async () => {
         try {
+            const cleanedUsername = username.trim()
+            const fallbackName = user?.firstName || 'Guest'
+            const finalUsername = cleanedUsername || fallbackName
+
             const res = await fetch('http://localhost:3001/api/v1/user/profile', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`,
                 },
-                body: JSON.stringify({ userName: username }),
+                body: JSON.stringify({ userName: finalUsername }),
             })
+
             if (res.ok) {
-                dispatch(setUser({ ...user, userName: username }))
-                dispatch(setUsername(username))
-                setOriginalUsername(username)
+                dispatch(setUser({ ...user, userName: finalUsername }))
+                dispatch(setUsername(finalUsername))
+                setOriginalUsername(finalUsername)
+                setUsernameInput(finalUsername)
                 setSuccessMessage('Nom modifié avec succès.')
                 setErrorMessage('')
                 setTimeout(() => {
